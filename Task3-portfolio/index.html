@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio of Imtisal Adeel — Frontend Developer, Web Designer, and Digital Creator building responsive digital experiences.">
+    <meta name="theme-color" content="#080808">
+    <title>Imtisal Adeel | Frontend Developer & Digital Creator</title>
+    <link rel="stylesheet" href="icons-lib/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <script src="javascript/script.js" defer></script>
+</head>
+
+<body>
+    <!-- customize cursor -->
+    <div class="basic-cursor"></div>
+    <!-- Navigation bar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Imtisal Adeel Logo" class="logo-img">
+            <span class="logo-text"> Imtisal Adeel</span>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- navigation links -->
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <!-- Digital clock  -->
+        <div id="digital-clock">
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+        </div>
+
+    </header>
+    <!-- Hero section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h3 class="typing">HELLO! From</h3>
+            <h1><span class="highlight">Imtisal Adeel</span></h1>
+            <h2>I am a <span class="text"></span></h2>
+            <p>
+                I'm a passionate Frontend Developer dedicated to building clean,
+                responsive, and high-performing digital experiences. Blending frontend
+                engineering with a designer's eye, I turn ideas into interfaces that
+                look sharp, feel intuitive, and perform flawlessly across every screen.
+            </p>
+            <a href="#projects" class="btn" id="projectsbtn"> View Projects <i
+                    class="fa-solid fa-arrow-up-right-from-square"></i> </a>
+            <a href="#contact" class="btn contact" id="talk"> Contact me <i class="fa-solid fa-paper-plane"></i> </a>
+
+
+            <!-- Social icons -->
+            <div class="social-icons">
+                <a href="https://github.com/imtii56" target="_blank" rel="noopener" aria-label="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/imtisaladeel" target="_blank" rel="noopener"
+                    aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://instagram.com/imti_tech56" target="_blank" rel="noopener" aria-label="Instagram"><i
+                        class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="img-glow">
+                <img src="assets/theme-image.jpg" alt="Hero image">
+            </div>
+        </div>
+    </section>
+    <!-- About section -->
+    <section class="about" id="about">
+        <h2 class="reveal">About <span class="highlight">Me</span></h2>
+        <div class="img-glow">
+            <img src="assets/theme-image.jpg" alt="about image">
+        </div>
+        <div class="about-content reveal">
+            <h3> Frontend Developer & Digital Creator</h3>
+            <p class="about-text"> I'm a Frontend Developer and Web Designer with a passion for turning ideas into
+                polished, high-performance digital products.
+                My work sits at the intersection of design and code — I prototype interfaces in Figma, then bring them
+                to life with clean HTML, CSS, and JavaScript.
+                Beyond building websites, I create digital content and visual assets that help brands tell their story
+                online. Whether I'm designing a layout, coding an interaction, or shaping a brand's visual identity,
+                my goal is always the same: experiences that are as functional as they are beautiful.</p>
+            <!-- Resume link -->
+                <a href="assets/Imtisal Adeel Resume.pdf" class="btn" id="CV">View CV</a>
+        </div>
+    </section>
+<!-- SKILL SECTION -->
+    <section class="skills" id="skills">
+        <h2>My <span class="highlight">Skills</span></h2>
+        <p class="section-desc">Technologies and tools I use to craft digital products.</p>
+
+        <div class="bento-skills-grid">
+            <!-- HTML5 -->
+            <article class="skill-card reveal">
+                <div class="card-header">
+                    <i class="fa-brands fa-html5 skill-icon"></i>
+                    <span class="tag tag-advanced">Advanced</span>
+                </div>
+                <div class="card-body">
+                    <h3>HTML5</h3>
+                    <p>Semantic Layouts & Web Accessibility (a11y)</p>
+                </div>
+            </article>
+
+            <!--  CSS3 -->
+            <article class="skill-card reveal">
+                <div class="card-header">
+                    <i class="fa-brands fa-css3-alt skill-icon"></i>
+                    <span class="tag tag-advanced">Advanced</span>
+                </div>
+                <div class="card-body">
+                    <h3>CSS3</h3>
+                    <p>Flexbox, CSS Grid, Glassmorphic Animations & Responsive Design</p>
+                </div>
+            </article>
+            <!-- JavaScript -->
+            <article class="skill-card bento-hero reveal">
+                <div class="card-header">
+                    <i class="fa-brands fa-js skill-icon"></i>
+                    <span class="tag tag-intermediate">Proficient</span>
+                </div>
+                <div class="card-body">
+                    <h3>JavaScript</h3>
+                    <p>ES6+, Asynchronous Programming, DOM Manipulation & Dynamic Applications</p>
+                </div>
+            </article>
+            <!-- php skill -->
+            <article class="skill-card reveal ">
+                <div class="card-header">
+                    <i class="fa-brands fa-php skill-icon"></i>
+                    <span class="tag tag-intermediate">Intermediate</span>
+                </div>
+                <div class="card-body">
+                    <h3>PHP</h3>
+                    <p>Server-Side Scripting, Form Handling, Sessions, Authentication & MySQL</p>
+                </div>
+            </article>
+            <article class="skill-card reveal ">
+                <div class="card-header">
+                    <i class="fa-brands fa-github skill-icon"></i>
+                    <span class="tag tag-intermediate">Intermediate</span>
+                </div>
+                <div class="card-body">
+                    <h3> Git &amp; GitHub</h3>
+                    <p>Version Control, Repository Management &amp; GitHub Pages Deployment</p>
+                </div>
+            </article>
+
+            <!-- : Figma skill -->
+            <article class="skill-card bento-wide reveal">
+                <div class="card-header">
+                    <i class="fa-brands fa-figma skill-icon"></i>
+                    <span class="tag tag-intermediate">Intermediate</span>
+                </div>
+                <div class="card-body">
+                    <h3>Figma UI/UX</h3>
+                    <p>Wireframing, High-Fidelity Design Systems, Prototyping & Interactive User Flows</p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2>Featured <span class="highlight">Projects</span></h2>
+        <p class="section-desc">Academic web platforms, interactive frontend apps, and visual digital assets.</p>
+
+        <div class="projects-grid">
+
+            <!-- Project 1: USKT CollabHub -->
+            <article class="project-card reveal">
+                <div class="project-img-wrapper">
+                    <img src="assets/interactive portal.png" alt="USKT Resource Hub Preview" class="project-img"
+                        loading="lazy">
+                </div>
+                <div class="project-content">
+                    <span class="category-badge">Frontend & Web Design</span>
+                    <h3>USKT Resource & CollabHub</h3>
+                    <p>An academic resource sharing and collaboration portal built for IT students. Features course
+                        breakdowns, study notes distribution, and team matching.</p>
+                    <p><strong>My contribution:</strong> Designed and developed the responsive interface, implemented
+                        frontend interactions, and worked on PHP-based form handling and database integration.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS Flexbox</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/imtii56/USKT_Resource_-_CollabHub.git" target="_blank"
+                            rel="noopener" class="btn-link">
+                            <i class="fa-brands fa-github"></i> Code
+                        </a>
+                        <a href="https://www.loom.com/share/2ee74da126ee4b3ca640b7c8526cd464" target="_blank"
+                            rel="noopener" class="btn-link active">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2: Interactive JS Calculator -->
+            <article class="project-card reveal">
+                <div class="project-img-wrapper">
+                    <img src="assets/Calculator.png" alt="Glassmorphic Calculator Preview" class="project-img"
+                        loading="lazy">
+                </div>
+                <div class="project-content">
+                    <span class="category-badge">Frontend Engineering</span>
+                    <h3>Glassmorphic Web Calculator</h3>
+                    <p>A JavaScript-based calculator implementing keyboard input handling, DOM updates, arithmetic
+                        evaluation, and responsive CSS Grid layout.</p>
+                    <p><strong>My contribution:</strong> Built the calculator interface, implemented JavaScript
+                        calculation logic and keyboard interactions, and developed the responsive CSS Grid layout.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">JavaScript (ES6+)</span>
+                        <span class="tech-tag">DOM Manipulation</span>
+                        <span class="tech-tag">CSS Glassmorphism</span>
+                        <span class="tech-tag">CSS Grid</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/imtii56/Calculator" target="_blank" rel="noopener" class="btn-link">
+                            <i class="fa-brands fa-github"></i> Code
+                        </a>
+                        <a href="https://imtii56.github.io/Calculator/" target="_blank" rel="noopener"
+                            class="btn-link active">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3: Sleep Cycle App Redesign -->
+            <article class="project-card reveal">
+                <div class="project-img-wrapper">
+                    <img src="assets/figma.png" alt="Sleep Cycle App Redesign Figma UI/UX" class="project-img"
+                        loading="lazy">
+                </div>
+                <div class="project-content">
+                    <span class="category-badge">UI/UX & Mobile Design</span>
+                    <h3>Sleep Cycle Application Redesign</h3>
+                    <p>A comprehensive 8-screen mobile app UI redesign built in Figma. Focuses on dark-mode aesthetic
+                        for night usage, seamless onboarding, real-time sleep tracking dashboards, and user goal
+                        management.</p>
+                    <p><strong>My contribution:</strong> Designed the mobile UI system, created the user flow,
+                        established the visual hierarchy, and built the interactive Figma prototype.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Mobile UI/UX</span>
+                        <span class="tech-tag">Design System</span>
+                        <span class="tech-tag">Prototyping</span>
+                        <span class="tech-tag">Dark Mode UI</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.figma.com/proto/Jn2KqwbaCrF6BK1NwXiSGk/Sleep-cycle?node-id=0-1&t=Lc7HnrxpjlY7vhuE-1"
+                            target="_blank" rel="noopener" class="btn-link active">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Figma Prototype
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+    <!-- Services section -->
+    <section class="services" id="services">
+        <h2 class="section-title">What I <span class="highlight">Can Build</span></h2>
+        <div class="services-container">
+            <!-- Services cards -->
+            <article class="service-card reveal">
+                <div class="service-icons"><i class="fa-solid fa-code"></i></div>
+                <h3>Frontend Development</h3>
+                <p> Building responsive and interactive websites using semantic HTML5, modern CSS3, and JavaScript. I
+                    focus on clean layouts, smooth interactions, and mobile-friendly experiences.</p>
+                <!-- hidden information of cards -->
+                <span id="text1" style="display: none;">
+                    <p>
+                        I specialize in adding dynamic interactivity using JavaScript, ensuring websites load rapidly
+                    </p>
+                </span>
+                <button id="btn1" onclick="cardnumber(1)">Read more <i class="fa-solid fa-chevron-down"></i></button>
+            </article>
+
+            <article class="service-card reveal">
+                <div class="service-icons"><i class="fa-solid fa-layer-group"></i></div>
+                <h3> Digital Creation</h3>
+                <p> Creating digital graphics, banners, social media visuals, and web assets with a focus on
+                    consistency, visual quality, and modern design.</p>
+                <span id="text2" style="display: none;">
+                    <p>Specializing in custom web graphics, social media tech branding materials, visual media editing,
+                        and micro-interactions.</p>
+                </span>
+                <button id="btn2" onclick="cardnumber(2)">Read more <i class="fa-solid fa-chevron-down"></i></button>
+            </article>
+
+            <article class="service-card reveal">
+                <div class="service-icons"><i class="fa-solid fa-pen-ruler"></i></div>
+                <h3>Web Design</h3>
+                <p>Designing modern, high-fidelity user interfaces in Figma. I focus on clean typography, striking
+                    visual aesthetics, and intuitive layouts that align perfectly with professional brand identities.
+                </p>
+                <span id="text3" style="display: none;">
+                    <p>
+                        Focusing on user journeys, mobile-first design approaches, wireframing, interactive prototypes,
+                        and high-fidelity mockups.
+                    </p>
+                </span>
+                <button id="btn3" onclick="cardnumber(3)">Read more <i class="fa-solid fa-chevron-down"></i></button>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo-text">Imtisal Adeel </div>
+                <p>Frontend Developer, Web Designer, and Digital Creator building pixel-perfect,
+                    responsive interfaces and on-brand digital content.</p>
+            </div>
+            <!-- Footer navbar -->
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul class="links-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Footer contact list -->
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="contact-list">
+                    <li><i class="fa-solid fa-phone"></i>+92 322685--</li>
+                    <li><i class="fa-solid fa-envelope"></i> imtisaladeel9@gmail.com</li>
+                    <li><i class="fa-solid fa-map-marker-alt"></i>Pasrur, Sialkot</li>
+                    <li><i class="fa-solid fa-clock"></i>Mon- Fri / 8am-10pm</li>
+                </ul>
+            </div>
+            <!-- Contact -->
+            <div class="footer-col footer-form">
+                <h3>Get <span class="highlight">In Touch</span></h3>
+                <p class="box-text"> Have a project idea or internship opportunity?
+                    Feel free to get in touch and let's connect..</p>
+                <form action="https://api.web3forms.com/submit" method="POST" class="form" id="contact-form" novalidate>
+                    <input type="hidden" name="access_key" value="b5e29ba7-139b-4120-80da-dc475efd6ecc">
+                    <input type="checkbox" name="botcheck" style="display: none;">
+                    <label for="name" class="sr-only">Your Name</label>
+                    <input type="text" id="name" placeholder="Your name" name="fname">
+                    <span id="namerror" class="error"></span>
+                    <label for="email" class="sr-only">Your Email</label>
+                    <input type="email" id="email" placeholder="Your email" name="email" required>
+                    <span id="emailerror" class="error"></span>
+                    <label for="message" class="sr-only">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Your message..." rows="4" required></textarea>
+                    <span id="msgerror" class="error"></span>
+                    <button type="submit" id="submit">Send Message</button>
+                </form>
+                <div class="social-icons">
+                    <a href="https://github.com/imtii56" target="_blank" rel="noopener" aria-label="GitHub"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/imtisaladeel" target="_blank" rel="noopener"
+                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://instagram.com/imti_tech56" target="_blank" rel="noopener" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Seperator -->
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2026 Imtisal Adeel. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
