@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/gallery.css">
+    <title>Gallery</title>
+</head>
+<body>
+    <header>
+        <h1>Visual Gallery</h1>
+    </header>
+    <div id="tsparticles" style="position: fixed; width: 100%; height: 100%; z-index: -1;"></div>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
+   <!-- Filter buttons -->
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button> 
+        <button class="filter-btn" data-filter="food">Food</button>
+        <button class="filter-btn" data-filter="pets">Pets</button>
+        <button class="filter-btn" data-filter="arts">Arts</button>
+    </div>
+    <!-- Gallery items -->
+    <div class="gallery">
+        <div class="items" data-category="nature">
+            <img src="assets/Butterfly.jpg" alt="Butterfly">
+            <div class="caption">Butterfly</div>
+        </div>
+        <div class="items" data-category="nature">
+            <img src="assets/sunlight.jpg" alt="Sunlight">
+            <div class="caption">Sunlight</div>
+        </div> 
+        <div class="items" data-category="nature">
+            <img src="assets/raining.jpg" alt="Raining">
+            <div class="caption">Raining</div>
+        </div>
+        <div class="items" data-category="food">
+            <img src="assets/food1.jpg" alt="Food 1">
+            <div class="caption">Food 1</div>
+        </div>
+        <div class="items" data-category="food">
+            <img src="assets/food2.jpg" alt="Food 2">
+            <div class="caption">Food 2</div>
+        </div>
+        <div class="items" data-category="pets">
+            <img src="assets/pet1.jpg" alt="Pet 1">
+            <div class="caption">Pet 1</div>
+        </div>
+        <div class="items" data-category="pets">
+            <img src="assets/pets2.jpg" alt="Pets 2">
+            <div class="caption">Pets 2</div>
+        </div>
+        <div class="items" data-category="arts">
+            <img src="assets/arts1.jpg" alt="Arts 1">
+            <div class="caption">Arts 1</div>
+        </div>
+        <div class="items" data-category="arts">
+            <img src="assets/arts2.jpg" alt="Arts 2">
+            <div class="caption">Arts 2</div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lb-btn close-btn" id="closeBtn" aria-label="Close">&times;</button>
+        <button class="lb-btn prev-btn" id="prevBtn" aria-label="Previous">&#10094;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightboxImg">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+        <button class="lb-btn next-btn" id="nextBtn" aria-label="Next">&#10095;</button>
+    </div>
+  <!-- Javascript -->
+    <script>
+        // DOM Element Selectors 
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.items');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const closeBtn = document.getElementById('closeBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Declared currentIndex variable
+        let visibleItems = [];
+        let currentIndex = 0;
+
+        function updateVisibleItems() {
+            visibleItems = Array.from(galleryItems).filter(item => !item.classList.contains('hide'));
+        }
+
+        // Attach event listener to every filter button
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (filterValue === 'all' || itemCategory === filterValue) {
+                        item.classList.remove('hide');
+                    } else {
+                        item.classList.add('hide');
+                    }
+                });
+
+                updateVisibleItems();
+            });
+        });
+
+        // Open Lightbox
+        function openLightbox(index) {
+            currentIndex = index;
+            const targetItem = visibleItems[currentIndex];
+            if (!targetItem) return;
+
+            const img = targetItem.querySelector('img');
+            const caption = targetItem.querySelector('.caption').textContent;
+
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.textContent = caption;
+
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close Lightbox
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Navigation Functions
+        function showNext(e) {
+            if (e) e.stopPropagation();
+            currentIndex = (currentIndex + 1) % visibleItems.length;
+            openLightbox(currentIndex);
+        }
+
+        function showPrev(e) {
+            if (e) e.stopPropagation();
+            currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+            openLightbox(currentIndex);
+        }
+
+        // Event Listeners
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                updateVisibleItems();
+                const indexInVisible = visibleItems.indexOf(item);
+                if (indexInVisible !== -1) {
+                    openLightbox(indexInVisible);
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        nextBtn.addEventListener('click', showNext);
+        prevBtn.addEventListener('click', showPrev);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // Keyboard Controls
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') showNext();
+            if (e.key === 'ArrowLeft') showPrev();
+        });
+
+        // Initial Setup
+        updateVisibleItems();
+    tsParticles.load("tsparticles", {
+    background: {
+      color: { value: "#0f172a" },
+    },
+    fpsLimit: 60,
+    particles: {
+      color: { value: "#38bdf8" },
+      links: {
+        color: "#38bdf8",
+        distance: 150,
+        enable: true,
+        opacity: 0.3,
+        width: 1,
+      },
+      move: {
+        enable: true,
+        speed: 1.5,
+      },
+      number: {
+        value: 50,
+      },
+      opacity: { value: 0.5 },
+      size: { value: { min: 1, max: 3 } },
+    },
+  });
+    </script>
+</body>
+</html>
